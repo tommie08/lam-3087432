@@ -2,7 +2,7 @@
 
 int main()
 {
-    char line[RSIZ][LSIZ];
+
     char sale[12];
     int i = 0;
     int tot = 0;
