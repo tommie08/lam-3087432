@@ -2,15 +2,25 @@
 
 int main()
 {
+    int num[12];
+    File* stats = fopen("input.txt", "r");
 
-    char sale[12];
-    int i = 0;
-    int tot = 0;
-    FILE* file = fopen("sale.txt", "r");
-    while(fgets(line[i], LSIZ, file)); {
-        line[i][strlen(line[i]) - 1] = '\0';
-        i++;
+    if (!stats){
+        printf("Error opening the file...\n");
+        return -1;
     }
+
+    for (int i = 0; i < 12; ++i) {
+        if (fscanf(stats, "d", &num[i]) != 1) {
+            printf("File contains invalid line\n");
+            return -1;
+        }
+        num[i] = 
+    }
+
+    fclose(stats);
+    return 0
+
     printf("Monthly sales report for 2022:\n");
     printf("\n Month        Sales\n");
     printf("\nJanuary    $");
