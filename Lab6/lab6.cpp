@@ -1,6 +1,7 @@
-#include <stdio.h>
 #include <iostream>
 #include <fstream>
+
+#define MAX 100
 
 void readMatrix(int matrix1[MAX][MAX], int matrix2[MAX][MAX], int &size, const std::string & filename);
 void printMatrix(int result[MAX][MAX]);
