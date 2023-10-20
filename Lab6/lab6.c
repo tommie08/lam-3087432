@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
-#include <iomainp>
 
 void readMatrix(int matrix1[MAX][MAX], int matrix2[MAX][MAX], int &size, const std::string & filename);
 void printMatrix(int result[MAX][MAX]);
@@ -19,7 +18,7 @@ int main() {
 }
 
 void read(int matrix1[MAX][MAX], int matrix2[MAX][MAX], int &size, const std::string & filename) {
-    std::ifstream MyFile(filename); // Function body
+    std::ifstream MyFile(filename);
     if (!MyFile) {
         std::cerr << "Error opening file: " << filename << std::end1;
         exit(1);
@@ -38,4 +37,5 @@ void read(int matrix1[MAX][MAX], int matrix2[MAX][MAX], int &size, const std::st
             MyFile >> matrix2[i][j];
         }
     }
+    return 0;
 }    
