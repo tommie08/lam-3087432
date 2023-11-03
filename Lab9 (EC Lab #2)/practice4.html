@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <h1>Multiplication Table</h1>
+    <a href="https://people.eecs.ku.edu/~d293l463/">Goes back to my index</a> <br> <br>
+    <?php
+    if (isset($_POST['number'])) {
+        $number = intval($_POST['number']);
+        echo "<h2>Multiplication Table for $number</h2>";
+        echo "<table border='1'>";
+        echo "<tr><th>&times;</th>";
+
+        // Display column indices
+        for ($col = 1; $col <= $number; $col++) {
+            echo "<th>$col</th>";
+        }
+        echo "</tr>";
+
+        // Generate and display the table
+        for ($row = 1; $row <= $number; $row++) {
+            echo "<tr><th>$row</th>";
+            for ($col = 1; $col <= $number; $col++) {
+                echo "<td>" . ($row * $col) . "</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+    }
+    ?>
+
+    <form method="post">
+        <label for="number">Enter a number: </label>
+        <input type="number" id="number" name="number" required>
+        <button type="submit">Generate Table</button>
+    </form>
+</body>
+</html>
